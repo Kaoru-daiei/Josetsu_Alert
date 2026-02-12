@@ -21,10 +21,12 @@ export function MainScreen() {
   const nearby = useNearbyAccidents({ position, accidents, thresholdMeters });
   const nearest = nearby[0];
 
-  const handlePlayVoice = async () => {
+  const handlePlayVoice = () => {
     if (nearby.length === 0) return;
-    await playAlertSound();
+    // スマホ（iOS Safari 等）では、await 後に speak() すると「ユーザー操作の直後」とみなされず
+    // 音声がブロックされるため、タップ直後に speak を呼び、効果音は並行再生する。
     browserSpeechAdapter.speak(buildVoiceMessageForMultiple(nearby));
+    playAlertSound();
   };
 
   return (
