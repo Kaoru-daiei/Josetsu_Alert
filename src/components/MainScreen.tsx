@@ -110,7 +110,7 @@ export function MainScreen() {
           )}
 
           <section className="voice-toggle-section">
-            <span className="voice-label">音声で注意を喚起する</span>
+            <span className="voice-label">自動音声案内</span>
             <button
               type="button"
               className={`btn-toggle ${voiceEnabled ? "on" : "off"}`}
