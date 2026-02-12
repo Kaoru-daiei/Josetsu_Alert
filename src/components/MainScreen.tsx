@@ -9,13 +9,21 @@ import { useSettings } from "../contexts/SettingsContext";
 import { fetchAccidents } from "../services/accidentData";
 import "./MainScreen.css";
 
+const STALE_SEC = 30;
+
 export function MainScreen() {
-  const { position, error, loading, requestPosition } = useGeolocation({ watch: true });
+  const { position, error, loading, requestPosition, lastUpdatedAt } = useGeolocation({ watch: true });
   const { voiceEnabled, setVoiceEnabled, thresholdMeters } = useSettings();
   const [accidents, setAccidents] = useState<Accident[]>([]);
+  const [now, setNow] = useState(() => Date.now());
 
   useEffect(() => {
     fetchAccidents().then(setAccidents);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
   }, []);
 
   const nearby = useNearbyAccidents({ position, accidents, thresholdMeters });
@@ -46,6 +54,19 @@ export function MainScreen() {
       )}
       {position && !error && (
         <>
+          <section className="update-section">
+            <span className="last-update">
+              最終更新: {lastUpdatedAt != null ? `${Math.max(0, Math.floor((now - lastUpdatedAt) / 1000))}秒前` : "—"}
+            </span>
+            <button type="button" className="btn-update-position" onClick={requestPosition}>
+              位置を更新
+            </button>
+          </section>
+          {lastUpdatedAt != null && now - lastUpdatedAt > STALE_SEC * 1000 && (
+            <p className="status status-stale">
+              位置が古くなっています。更新ボタンを押してください。
+            </p>
+          )}
           <section className="status-card">
             {nearby.length === 0 ? (
               <p className="status status-ok">
