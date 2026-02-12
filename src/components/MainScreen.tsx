@@ -7,6 +7,8 @@ import { useGeolocation } from "../hooks/useGeolocation";
 import { useNearbyAccidents } from "../hooks/useNearbyAccidents";
 import { useSettings } from "../contexts/SettingsContext";
 import { fetchAccidents } from "../services/accidentData";
+import { MapView } from "./MapView";
+import { WarningBanner } from "./WarningBanner";
 import "./MainScreen.css";
 
 const STALE_SEC = 30;
@@ -18,6 +20,7 @@ export function MainScreen() {
   const { voiceEnabled, setVoiceEnabled, thresholdMeters } = useSettings();
   const [accidents, setAccidents] = useState<Accident[]>([]);
   const [now, setNow] = useState(() => Date.now());
+  const [viewMode, setViewMode] = useState<"list" | "map">("list");
 
   useEffect(() => {
     fetchAccidents().then(setAccidents);
@@ -53,6 +56,10 @@ export function MainScreen() {
 
   return (
     <main className="main-screen">
+      {viewMode === "map" && nearby.length > 0 && (
+        <WarningBanner nearbyAccidents={nearby} />
+      )}
+
       <h1 className="main-title">除雪アラート</h1>
 
       {loading && !position && (
@@ -68,6 +75,23 @@ export function MainScreen() {
       )}
       {position && !error && (
         <>
+          <div className="view-toggle">
+            <button
+              type="button"
+              className={`btn-view ${viewMode === "list" ? "active" : ""}`}
+              onClick={() => setViewMode("list")}
+            >
+              リスト表示
+            </button>
+            <button
+              type="button"
+              className={`btn-view ${viewMode === "map" ? "active" : ""}`}
+              onClick={() => setViewMode("map")}
+            >
+              マップ表示
+            </button>
+          </div>
+
           <section className="update-section">
             <span className="last-update">
               最終更新: {lastUpdatedAt != null ? `${Math.max(0, Math.floor((now - lastUpdatedAt) / 1000))}秒前` : "—"}
@@ -95,18 +119,27 @@ export function MainScreen() {
             )}
           </section>
 
-          {nearby.length > 0 && (
-            <section className="voice-section">
-              <button
-                type="button"
-                className="btn-play-voice"
-                onClick={handlePlayVoice}
-                disabled={!voiceEnabled}
-                title={voiceEnabled ? "最も近い事故の内容を音声で再生します" : "音声をONにすると再生できます"}
-              >
-                音声を再生
-              </button>
-            </section>
+          {viewMode === "list" ? (
+            nearby.length > 0 && (
+              <section className="voice-section">
+                <button
+                  type="button"
+                  className="btn-play-voice"
+                  onClick={handlePlayVoice}
+                  disabled={!voiceEnabled}
+                  title={voiceEnabled ? "最も近い事故の内容を音声で再生します" : "音声をONにすると再生できます"}
+                >
+                  音声を再生
+                </button>
+              </section>
+            )
+          ) : (
+            <MapView
+              currentPosition={position}
+              accidents={accidents}
+              nearbyAccidents={nearby}
+              thresholdMeters={thresholdMeters}
+            />
           )}
 
           <section className="voice-toggle-section">

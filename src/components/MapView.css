@@ -1,0 +1,155 @@
+.map-view {
+  width: 100%;
+  max-width: 600px;
+}
+
+.map-container {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 現在地マーカー */
+.current-position-marker {
+  width: 20px;
+  height: 20px;
+  background: #07c;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* 事故マーカー */
+.accident-marker {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.accident-marker-inner {
+  width: 30px;
+  height: 30px;
+  background: #c00;
+  border: 2px solid white;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.accident-marker-inner::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* 警告状態のマーカー（近接時） */
+.accident-marker-warning {
+  animation: bounce 1s infinite;
+  filter: drop-shadow(0 0 8px #f00);
+}
+
+.accident-marker-warning .accident-marker-inner {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ポップアップのスタイル */
+.accident-popup {
+  font-family: system-ui, "Helvetica Neue", Arial, sans-serif;
+  min-width: 200px;
+}
+
+.accident-popup-category {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #c00;
+  margin-bottom: 0.25rem;
+}
+
+.accident-popup-date {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.accident-popup-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.accident-popup-distance {
+  font-size: 0.9rem;
+  color: #c60;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+}
+
+/* Leafletポップアップのデフォルトスタイルを調整 */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content {
+  margin: 0.75rem;
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+/* モバイル最適化 */
+@media (max-width: 480px) {
+  .map-container {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .accident-popup {
+    min-width: 180px;
+  }
+}
