@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Accident } from "../types/accident";
-import { buildVoiceMessageForMultiple } from "../core/voiceMessage";
+import { buildVoiceMessage, buildVoiceMessageForMultiple } from "../core/voiceMessage";
 import { browserSpeechAdapter, playAlertSound } from "../adapters/speech";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { useNearbyAccidents } from "../hooks/useNearbyAccidents";
@@ -10,6 +10,8 @@ import { fetchAccidents } from "../services/accidentData";
 import "./MainScreen.css";
 
 const STALE_SEC = 30;
+/** 同一地点の自動読み上げを防ぐクールダウン（ミリ秒） */
+const AUTO_ANNOUNCE_COOLDOWN_MS = 5 * 60 * 1000;
 
 export function MainScreen() {
   const { position, error, loading, requestPosition, lastUpdatedAt } = useGeolocation({ watch: true });
@@ -28,6 +30,18 @@ export function MainScreen() {
 
   const nearby = useNearbyAccidents({ position, accidents, thresholdMeters });
   const nearest = nearby[0];
+  const announcedAtRef = useRef<Record<string, number>>({});
+
+  useEffect(() => {
+    if (!position || nearby.length === 0 || !voiceEnabled) return;
+    const acc = nearby[0];
+    const now = Date.now();
+    if ((announcedAtRef.current[acc.id] ?? 0) + AUTO_ANNOUNCE_COOLDOWN_MS > now) return;
+    announcedAtRef.current[acc.id] = now;
+    playAlertSound().then(() => {
+      browserSpeechAdapter.speak(buildVoiceMessage(acc));
+    });
+  }, [position?.latitude, position?.longitude, nearby, voiceEnabled]);
 
   const handlePlayVoice = () => {
     if (nearby.length === 0) return;
