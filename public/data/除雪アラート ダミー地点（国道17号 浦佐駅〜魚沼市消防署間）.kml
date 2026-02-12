@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>除雪アラート ダミー地点（国道17号 浦佐駅〜魚沼市消防署間）</name>
+    <NetworkLink>
+      <name>無題の地図</name>
+      <Link>
+        <href><![CDATA[https://www.google.co.jp/maps/d/kml?forcekml=1&mid=1kHgqwgZnYXZlKNW5BqNpUCb1s2bCseI&lid=zuOa0pgJKKM]]></href>
+      </Link>
+    </NetworkLink>
+  </Document>
+</kml>

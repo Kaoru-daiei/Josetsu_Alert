@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>除雪アラート ダミー地点（国道17号 浦佐駅〜魚沼市消防署間）</name>
+    <description>CSVエクスポートの位置情報から生成（国道17号ルート上）</description>
+    <Placemark>
+      <name>route17-1 【転落】浦佐駅付近</name>
+      <description>2023年12月に除雪作業中の転落事故が発生しています</description>
+      <Point>
+        <coordinates>138.9238,37.1682,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-2 【接触】</name>
+      <description>2022年1月に路肩除雪中、車両との接触がありました</description>
+      <Point>
+        <coordinates>138.9253202,37.1788597,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-3 【巻き込み】</name>
+      <description>2024年2月に除雪機の巻き込み事故が発生しています</description>
+      <Point>
+        <coordinates>138.9292,37.1812,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-4 【転倒】</name>
+      <description>2021年12月に凍結路面での転倒事故がありました</description>
+      <Point>
+        <coordinates>138.9515119,37.1973329,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-5 【接触】</name>
+      <description>2023年1月に路肩の除雪中、雪に埋もれた縁石に接触しました</description>
+      <Point>
+        <coordinates>138.9551127,37.2012608,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-6 【転落】</name>
+      <description>2022年2月に除雪機から転落する事故が発生しています</description>
+      <Point>
+        <coordinates>138.9385433,37.1905442,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-7 【その他】</name>
+      <description>2023年12月に吹きだまりによる除雪車の立ち往生がありました</description>
+      <Point>
+        <coordinates>138.9662342,37.2084393,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-8 【接触】堀之内手前</name>
+      <description>2022年1月に歩行者との接触事故が発生しています</description>
+      <Point>
+        <coordinates>138.9668884,37.2175341,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-9 【その他】堀之内</name>
+      <description>2024年1月に路肩崩落のため除雪作業に注意が必要でした</description>
+      <Point>
+        <coordinates>138.9672067,37.2248489,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>route17-10 【転落】魚沼市消防署付近</name>
+      <description>2023年2月に除雪機の転落事故が発生しています</description>
+      <Point>
+        <coordinates>138.9674896,37.2319416,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

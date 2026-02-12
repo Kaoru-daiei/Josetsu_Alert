@@ -1,18 +1,82 @@
 [
   {
-    "id": "sample-1",
-    "latitude": 37.1980,
-    "longitude":  138.9519,
-    "description": "2023年1月に除雪機の転落事故が発生しています",
-    "occurred_at": "2023-01",
+    "id": "route17-1",
+    "latitude": 37.1682,
+    "longitude": 138.9238,
+    "description": "2023年12月に除雪作業中の転落事故が発生しています",
+    "occurred_at": "2023-12",
     "category": "転落"
   },
   {
-    "id": "sample-2",
-    "latitude": 37.1980,
-    "longitude":  138.9519,
-    "description": "2022年12月に路肩の除雪作業中、車両との接触がありました",
-    "occurred_at": "2022-12",
+    "id": "route17-2",
+    "latitude": 37.1788597,
+    "longitude": 138.9253202,
+    "description": "2022年1月に路肩除雪中、車両との接触がありました",
+    "occurred_at": "2022-01",
     "category": "接触"
+  },
+  {
+    "id": "route17-3",
+    "latitude": 37.1812,
+    "longitude": 138.9292,
+    "description": "2024年2月に除雪機の巻き込み事故が発生しています",
+    "occurred_at": "2024-02",
+    "category": "巻き込み"
+  },
+  {
+    "id": "route17-4",
+    "latitude": 37.1973329,
+    "longitude": 138.9515119,
+    "description": "2021年12月に凍結路面での転倒事故がありました",
+    "occurred_at": "2021-12",
+    "category": "転倒"
+  },
+  {
+    "id": "route17-5",
+    "latitude": 37.2012608,
+    "longitude": 138.9551127,
+    "description": "2023年1月に路肩の除雪中、雪に埋もれた縁石に接触しました",
+    "occurred_at": "2023-01",
+    "category": "接触"
+  },
+  {
+    "id": "route17-6",
+    "latitude": 37.1905442,
+    "longitude": 138.9385433,
+    "description": "2022年2月に除雪機から転落する事故が発生しています",
+    "occurred_at": "2022-02",
+    "category": "転落"
+  },
+  {
+    "id": "route17-7",
+    "latitude": 37.2084393,
+    "longitude": 138.9662342,
+    "description": "2023年12月に吹きだまりによる除雪車の立ち往生がありました",
+    "occurred_at": "2023-12",
+    "category": "その他"
+  },
+  {
+    "id": "route17-8",
+    "latitude": 37.2175341,
+    "longitude": 138.9668884,
+    "description": "2022年1月に歩行者との接触事故が発生しています",
+    "occurred_at": "2022-01",
+    "category": "接触"
+  },
+  {
+    "id": "route17-9",
+    "latitude": 37.2248489,
+    "longitude": 138.9672067,
+    "description": "2024年1月に路肩崩落のため除雪作業に注意が必要でした",
+    "occurred_at": "2024-01",
+    "category": "その他"
+  },
+  {
+    "id": "route17-10",
+    "latitude": 37.2319416,
+    "longitude": 138.9674896,
+    "description": "2023年2月に除雪機の転落事故が発生しています",
+    "occurred_at": "2023-02",
+    "category": "転落"
   }
 ]
