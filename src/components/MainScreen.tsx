@@ -160,6 +160,9 @@ export function MainScreen() {
         <Link to="/list" className="nav-link">
           事故一覧
         </Link>
+        <Link to="/add" className="nav-link">
+          事故登録
+        </Link>
         <Link to="/settings" className="nav-link">
           設定
         </Link>

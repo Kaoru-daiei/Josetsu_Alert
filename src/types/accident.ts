@@ -8,7 +8,7 @@ export interface Accident {
   /** 発生日（YYYY-MM-DD または YYYY-MM） */
   occurred_at: string;
   /** 種別（転落・接触・巻き込み等） */
-  category: string;
+  category?: string;
 }
 
 /** 現在地から見た事故＋距離 */

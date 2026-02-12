@@ -1,0 +1,149 @@
+.add-screen {
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.add-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.add-form {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+.form-id {
+  font-size: 1rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background: #fff;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #07c;
+}
+
+.form-textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.picker-map-container {
+  margin-top: 0.25rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.picker-map {
+  width: 100%;
+  height: 280px;
+}
+
+.form-coords {
+  font-size: 0.85rem;
+  color: #666;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn-gps {
+  margin-top: 0.25rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 2px solid #07c;
+  background: #fff;
+  color: #07c;
+  cursor: pointer;
+}
+
+.btn-gps:hover {
+  background: #07c;
+  color: #fff;
+}
+
+.btn-gps:disabled {
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid #07c;
+  background: #07c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #059;
+  border-color: #059;
+}
+
+.btn-submit:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.form-error {
+  color: #c00;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.add-back {
+  margin-top: auto;
+  padding: 0.6rem 1.2rem;
+  color: #07c;
+  text-decoration: none;
+  border: 1px solid #07c;
+  border-radius: 8px;
+}
+
+.add-back:hover {
+  background: #07c;
+  color: #fff;
+}
