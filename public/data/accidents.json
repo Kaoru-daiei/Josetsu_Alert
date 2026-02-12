@@ -1,0 +1,18 @@
+[
+  {
+    "id": "sample-1",
+    "latitude": 37.1980,
+    "longitude":  138.9519,
+    "description": "2023年1月に除雪機の転落事故が発生しています",
+    "occurred_at": "2023-01",
+    "category": "転落"
+  },
+  {
+    "id": "sample-2",
+    "latitude": 37.1980,
+    "longitude":  138.9519,
+    "description": "2022年12月に路肩の除雪作業中、車両との接触がありました",
+    "occurred_at": "2022-12",
+    "category": "接触"
+  }
+]

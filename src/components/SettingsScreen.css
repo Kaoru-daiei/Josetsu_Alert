@@ -1,0 +1,68 @@
+.settings-screen {
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.settings-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.settings-section {
+  width: 100%;
+  max-width: 360px;
+  text-align: left;
+}
+
+.settings-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.settings-desc {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+
+.threshold-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-threshold {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.btn-threshold.active {
+  border-color: #07c;
+  background: #07c;
+  color: #fff;
+}
+
+.settings-back {
+  margin-top: auto;
+  padding: 0.6rem 1.2rem;
+  color: #07c;
+  text-decoration: none;
+  border: 1px solid #07c;
+  border-radius: 8px;
+}
+
+.settings-back:hover {
+  background: #07c;
+  color: #fff;
+}

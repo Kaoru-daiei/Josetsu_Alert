@@ -1,0 +1,139 @@
+.main-screen {
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.main-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.status-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: var(--color-surface, #f5f5f5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.status {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.status-loading {
+  color: #666;
+}
+
+.status-ok {
+  color: #0a5;
+}
+
+.status-warn {
+  color: #c60;
+  font-weight: 600;
+}
+
+.status-error {
+  color: #c00;
+}
+
+.status-error p {
+  margin: 0 0 0.75rem;
+}
+
+.btn-retry {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #666;
+  background: #fff;
+  cursor: pointer;
+}
+
+.voice-section {
+  width: 100%;
+  max-width: 360px;
+}
+
+.btn-play-voice {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid #07c;
+  background: #07c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-play-voice:hover:not(:disabled) {
+  background: #059;
+  border-color: #059;
+}
+
+.btn-play-voice:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.voice-toggle-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.voice-label {
+  font-size: 1rem;
+}
+
+.btn-toggle {
+  min-width: 4rem;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid #333;
+  cursor: pointer;
+}
+
+.btn-toggle.on {
+  background: #0a5;
+  color: #fff;
+  border-color: #0a5;
+}
+
+.btn-toggle.off {
+  background: #fff;
+  color: #666;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.nav-link {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: #07c;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #07c;
+}
+
+.nav-link:hover {
+  background: #07c;
+  color: #fff;
+}

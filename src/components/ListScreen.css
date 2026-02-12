@@ -1,0 +1,82 @@
+.list-screen {
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.list-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.accident-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.accident-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 12px;
+  background: var(--color-surface, #f5f5f5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.accident-distance {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #07c;
+}
+
+.accident-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.accident-category,
+.accident-date {
+  font-size: 0.85rem;
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+.accident-description {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.list-empty {
+  color: #666;
+  margin: 1rem 0;
+}
+
+.list-back {
+  margin-top: auto;
+  padding: 0.6rem 1.2rem;
+  color: #07c;
+  text-decoration: none;
+  border: 1px solid #07c;
+  border-radius: 8px;
+}
+
+.list-back:hover {
+  background: #07c;
+  color: #fff;
+}
